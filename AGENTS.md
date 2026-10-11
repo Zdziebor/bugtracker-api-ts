@@ -81,11 +81,14 @@ Po komunikacie „REVIEW”:
 - Nie twierdź, że plik, test lub CI działa, jeśli tego nie sprawdzono.
 
 ## Granice projektu
+- Obowiązkowe klasy, konstruktory, enkapsulacja i dependency injection ćwiczymy w repository i service zgodnie z `PROJECT.md`; nie narzucaj dziedziczenia ani kontenera DI. Nie dodawaj mechanizmu tylko po to, by pojawił się w kodzie.
+- Deadline głównej ścieżki to 31.10.2026. Jeśli dostępny czas nie wystarcza, pokaż konflikt i oszacowanie z `ROADMAP.md`; nie usuwaj ważnych umiejętności ani nie zaliczaj ich bez dowodów.
 - Wymagania podstawowe są w `PROJECT.md` — nie dokładaj nowych frameworków i funkcji bez potrzeby.
 - Nie buduj frontendu, logowania, bazy SQL, Dockera ani mikroserwisów w ramach obowiązkowej części projektu.
 - Rozszerzenia `BONUS` można zaproponować dopiero po skończeniu głównej ścieżki; **nie blokują przejścia do Playwrighta**.
 
 ## Odnotowywanie postępów
+- Matryca w `AUDIT.md` mapuje wymagania na zadania i dowody, ale nie jest drugą checklistą. Odróżniaj obecność tematu w specyfikacji od jego praktycznego opanowania.
 - `PROJECT.md` jest **jedyną checklistą ukończenia** zadań; `PROGRESS.md` jest krótkim dziennikiem sesji i blockerów.
 - Nie oznaczaj zadania jako ukończonego bez pokazania przez użytkownika wyników lub przeprowadzenia uzgodnionych sprawdzeń.
 - Domyślnie nie edytuj nawet plików `.md`. Na polecenie `ZAPISZ POSTĘP` możesz zaktualizować **wyłącznie** checkbox w `PROJECT.md` i dziennik `PROGRESS.md`, jeśli użytkownik potwierdzi, że chce tej aktualizacji.
@@ -103,3 +106,10 @@ Po komunikacie „REVIEW”:
 
 ## Pierwsza odpowiedź Codexa
 Gdy użytkownik napisze `START`, krótko potwierdź cel i podaj wyłącznie **zadanie `0.1` z `PROJECT.md`, bez komend tworzących całą aplikację i bez gotowego kodu.
+
+## Końcowa próba samodzielności (8.8)
+
+- Przed próbą sprawdź historię zadań i ćwiczeń, aby wymaganie nie powtarzało identycznego rozwiązania. Nie ujawniaj rozwiązania przy audycie specyfikacji.
+- Użytkownik sam zapisuje plan i przypadki. W tym jednym zadaniu nie oceniaj ich przed samodzielną próbą; review wykonuj na końcu. Oficjalna dokumentacja jest dozwolona, stopniowane wskazówki pozostają dostępne wyłącznie na prośbę.
+- Sprawdź interpretację wymagań, implementację, projekt testów, deterministyczność, debugging i wyjaśnienie decyzji, nie tylko zielone testy. Poprawki pisze użytkownik.
+- Zanotuj zakres pomocy; po prowadzeniu krok po kroku zaproponuj równie mały, nowy transfer zamiast twierdzić, że próba dowiodła samodzielności.

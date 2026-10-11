@@ -6,23 +6,25 @@ To projekt #2, który rozpoczniesz **w poniedziałek 12 października 2026 r.**,
 
 **Cel nie jest taki, by zostać backend developerem.** Masz nauczyć się samodzielnie pisać TypeScript i testy, rozumieć HTTP oraz pracować z błędami, żeby później przejść bez osobnego kursu na **Playwright + TypeScript**.
 
-Pełny zakres oraz wszystkie podzadania (`0.1`–`8.7`) są zapisane w `PROJECT.md`. Ten dokument to wyłącznie mapa etapów. **Nie odhaczaj zadań tutaj — jedno źródło prawdy to `PROJECT.md`.**
+Pełny zakres oraz wszystkie podzadania (`0.1`–`8.8`) są zapisane w `PROJECT.md`. Ten dokument to wyłącznie mapa etapów. **Nie odhaczaj zadań tutaj — jedno źródło prawdy to `PROJECT.md`.** Matryca umiejętności i dowodów znajduje się w `AUDIT.md`.
 
 ## Etapy i orientacyjny nakład pracy
 
 | Etap | Temat | Efekt etapu | Szacunkowo |
 |---|---|---|---:|
-| 0 | Repozytorium, Node i TS | Projekt uruchamia się i przechodzi typecheck | 2–4 h |
+| 0 | Repozytorium, Node i TS | Projekt uruchamia się, przechodzi typecheck i zatrzymuje na breakpoincie TS | 2–4 h |
 | 1 | Typy i model Issue | Tworzenie/aktualizacja obiektów, zasady domeny | 4–7 h |
-| 2 | Repository i service | CRUD oraz filtry bez HTTP | 5–8 h |
-| 3 | Express, HTTP, Zod | Działające endpointy REST i walidacja | 7–11 h |
-| 4 | `async/await`, JSON | Odczyt/zapis danych i obsługa I/O | 5–9 h |
-| 5 | Vitest — unit | Samodzielne testy logiki biznesowej | 6–9 h |
-| 6 | Vitest + Supertest — API | Testy pozytywne, negatywne i CRUD E2E na poziomie API | 8–12 h |
-| 7 | GitHub Actions | Automatyczne uruchamianie jakości i testów | 3–5 h |
-| 8 | README i rozmowa | Portfolio, dokumentacja, świadome decyzje | 3–5 h |
+| 2 | Repository i service | CRUD, klasy, konstruktory i DI przez kontrakt | 6–9 h |
+| 3 | Express, HTTP, Zod | Endpointy REST, walidacja i mały klient fetch | 8–12 h |
+| 4 | `async/await`, JSON | I/O, sprzątanie, odrzucenia i współbieżne niezależne odczyty | 6–10 h |
+| 5 | Vitest — unit | AAA, EP/BVA, test doubles i testy async | 8–12 h |
+| 6 | Vitest + Supertest — API | Walidacja odpowiedzi, test.each, CRUD i izolacja | 9–13 h |
+| 7 | GitHub Actions | Debugging TS, diagnoza czerwonego CI, branch/PR/merge | 4–7 h |
+| 8 | README i rozmowa | Portfolio i praktyczna próba samodzielności | 5–8 h |
 
-**Bazowy szacunek: około 43–70 godzin.** Z dodatkowymi samodzielnymi próbami, powtórkami i ćwiczeniami transferowymi realnie może to być **50–85 godzin**, czyli około 25–43 dni przy 2 godzinach dziennie. Nie traktuj tego jako deadline. Nie rozszerzaj zakresu backendu tylko dlatego, że idzie wolniej.
+**Deadline pozostaje 31.10.2026.** Od 12 do 31 października włącznie są 20 dni, czyli 40 h przy codziennych 2 h nauki (mniej przy dniach wolnych). Dotychczasowe 43–70 h już przekraczało ten budżet. Po audycie szacunek planistyczny sumy etapów to **52–82 h**, a z poprawkami, powtórkami i transferem **60–95 h**. To oszacowanie, nie zmierzony czas; nakład ponownie oceniamy po etapach 0–2.
+
+**Konflikt:** przy 2 h dziennie pełna ścieżka do deadline'u nie jest realistycznym założeniem. Potrzebne byłoby średnio 2,6–4,1 h dziennie na bazowy zakres lub około 3–4,75 h z buforem. Nie zakładamy automatycznie, że użytkownik ma ten czas. Zachowujemy termin i wymagania, zgłaszamy ryzyko zamiast skreślać testy/OOP/debugging lub deklarować gotowość bez dowodów. Łączymy ćwiczenia z istniejącymi zadaniami, unikamy duplikatów, odkładamy wszystkie BONUS-y. Nie rozszerzaj zakresu backendu tylko dlatego, że idzie wolniej.
 
 ## Jak będzie malało wsparcie AI?
 
@@ -36,10 +38,13 @@ Nie opieraj przejścia do Playwrighta na zero-jedynkowym „nigdy nie korzystał
 ## Kamienie milowe
 
 - **Po etapie 2:** potrafisz zbudować logikę CRUD bez frameworka HTTP.
+  Potrafisz też wyjaśnić klasę, instancję, konstruktor, enkapsulację i wstrzyknięcie zależności przez kontrakt.
 - **Po etapie 3:** umiesz wysłać request, odczytać response i wyjaśnić kody HTTP.
 - **Po etapie 4:** rozumiesz `async/await`, Promise, `try/catch` i nie ukrywasz błędów I/O.
+  Pokazujesz sprzątanie w `finally` i uzasadniasz wybór między sekwencją a `Promise.all` bez współbieżnych zapisów do jednego JSON.
 - **Po etapie 6:** testujesz API automatycznie i diagnozujesz porażki testów.
 - **Po etapie 8:** masz repozytorium gotowe do pokazania rekruterowi i możesz rozpocząć projekt Playwright.
+  Dowodem transferu jest 8.8 wykonane samodzielnie oraz praktyczne kryteria z `AUDIT.md`, a nie sam quiz.
 
 ## Zasada priorytetów
 
