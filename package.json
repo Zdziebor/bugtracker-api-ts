@@ -16,9 +16,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "build": "tsc",
+    "dev": "tsx src/index.ts"
   },
   "devDependencies": {
+    "tsx": "^4.23.15",
     "typescript": "^7.0.2"
   }
 }
