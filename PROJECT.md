@@ -14,6 +14,7 @@ Twoim celem zawodowym jest **Test Automation Engineer (Playwright + TypeScript)*
 **Definicja sukcesu:** umiesz wyjaśnić projekt bez AI, pokazać testy oraz samodzielnie zaplanować i wykonać przynajmniej jedną nową, małą zmianę w API wraz z testem. Korzystanie z dokumentacji jest dozwolone; pomoc AI przy nowych narzędziach nie przekreśla postępu.
 
 ### Czego NIE budujesz
+
 - Frontendu ani aplikacji React.
 - Logowania i autoryzacji.
 - Bazy SQL, Dockera, mikroserwisów, wdrożenia w chmurze.
@@ -26,18 +27,18 @@ Te rzeczy nie są potrzebne do zamknięcia etapu TypeScript.
 
 ## 2. Stack
 
-| Obszar | Technologia | Dlaczego |
-|---|---|---|
-| Runtime | Node.js 24 LTS | Aktualna wspierana linia LTS do nauki |
-| Język | TypeScript, `strict: true` | Bezpieczna praca na typach |
-| API | Express | Poznanie routingów, request/response, middleware |
-| Walidacja | Zod | Bezpieczna walidacja nieznanych danych w runtime |
-| Testy | Vitest | Testy jednostkowe i integracyjne |
-| Testy HTTP | Supertest | Testowanie aplikacji Express bez osobnego uruchamiania serwera |
-| Uruchamianie TS | `tsx` (dev), `tsc` (typecheck/build) | Rozdzielenie uruchamiania od sprawdzania typów |
-| Jakość | ESLint + Prettier | Spójność kodu |
-| CI | GitHub Actions | Automatyczne sprawdzanie zmian |
-| Dane | Początkowo pamięć, później plik JSON (`fs/promises`) | Ćwiczenie asynchroniczności i separacji odpowiedzialności |
+| Obszar          | Technologia                                          | Dlaczego                                                       |
+| --------------- | ---------------------------------------------------- | -------------------------------------------------------------- |
+| Runtime         | Node.js 24 LTS                                       | Aktualna wspierana linia LTS do nauki                          |
+| Język           | TypeScript, `strict: true`                           | Bezpieczna praca na typach                                     |
+| API             | Express                                              | Poznanie routingów, request/response, middleware               |
+| Walidacja       | Zod                                                  | Bezpieczna walidacja nieznanych danych w runtime               |
+| Testy           | Vitest                                               | Testy jednostkowe i integracyjne                               |
+| Testy HTTP      | Supertest                                            | Testowanie aplikacji Express bez osobnego uruchamiania serwera |
+| Uruchamianie TS | `tsx` (dev), `tsc` (typecheck/build)                 | Rozdzielenie uruchamiania od sprawdzania typów                 |
+| Jakość          | ESLint + Prettier                                    | Spójność kodu                                                  |
+| CI              | GitHub Actions                                       | Automatyczne sprawdzanie zmian                                 |
+| Dane            | Początkowo pamięć, później plik JSON (`fs/promises`) | Ćwiczenie asynchroniczności i separacji odpowiedzialności      |
 
 **Ważne:** Nie instaluj wszystkich pakietów na raz. Dodawaj zależności, gdy pojawi się zadanie, które ich wymaga. Wersje zależności sprawdzaj w oficjalnej dokumentacji w momencie instalacji.
 
@@ -45,15 +46,15 @@ Te rzeczy nie są potrzebne do zamknięcia etapu TypeScript.
 
 Każde zgłoszenie zawiera:
 
-| Pole | Typ / reguła |
-|---|---|
-| `id` | UUID, nadawany przez aplikację |
-| `title` | string; po `trim()` długość 3–100, obowiązkowe |
-| `description` | string; max 1000 znaków, domyślnie `""` |
-| `priority` | `low \| medium \| high \| critical`, domyślnie `medium` |
-| `status` | `open \| in_progress \| resolved`, nowy issue zaczyna jako `open` |
-| `createdAt` | ISO 8601 string, nadawany przez aplikację |
-| `updatedAt` | ISO 8601 string, nadawany przez aplikację, zmieniany przy aktualizacji |
+| Pole          | Typ / reguła                                                           |
+| ------------- | ---------------------------------------------------------------------- |
+| `id`          | UUID, nadawany przez aplikację                                         |
+| `title`       | string; po `trim()` długość 3–100, obowiązkowe                         |
+| `description` | string; max 1000 znaków, domyślnie `""`                                |
+| `priority`    | `low \| medium \| high \| critical`, domyślnie `medium`                |
+| `status`      | `open \| in_progress \| resolved`, nowy issue zaczyna jako `open`      |
+| `createdAt`   | ISO 8601 string, nadawany przez aplikację                              |
+| `updatedAt`   | ISO 8601 string, nadawany przez aplikację, zmieniany przy aktualizacji |
 
 **Nie ufaj danym przychodzącym przez HTTP.** Samo typowanie TypeScript nie waliduje JSON otrzymanego od klienta. Użytkownik API nie może sam przypisywać `id`, dat ani statusu przy tworzeniu zgłoszenia.
 
@@ -61,14 +62,14 @@ Wersja podstawowa pozwala zmienić status na dowolną wartość ze zbioru dozwol
 
 ### Kontrakt REST API
 
-| Metoda | Endpoint | Zachowanie | Sukces |
-|---|---|---|---|
-| `GET` | `/health` | Kontrola działania aplikacji | `200` |
-| `POST` | `/issues` | Nowe zgłoszenie | `201` |
-| `GET` | `/issues` | Lista zgłoszeń, opcjonalne filtry | `200` |
-| `GET` | `/issues/:id` | Pojedyncze zgłoszenie | `200` |
-| `PATCH` | `/issues/:id` | Częściowa aktualizacja | `200` |
-| `DELETE` | `/issues/:id` | Usunięcie zgłoszenia | `204` bez treści |
+| Metoda   | Endpoint      | Zachowanie                        | Sukces           |
+| -------- | ------------- | --------------------------------- | ---------------- |
+| `GET`    | `/health`     | Kontrola działania aplikacji      | `200`            |
+| `POST`   | `/issues`     | Nowe zgłoszenie                   | `201`            |
+| `GET`    | `/issues`     | Lista zgłoszeń, opcjonalne filtry | `200`            |
+| `GET`    | `/issues/:id` | Pojedyncze zgłoszenie             | `200`            |
+| `PATCH`  | `/issues/:id` | Częściowa aktualizacja            | `200`            |
+| `DELETE` | `/issues/:id` | Usunięcie zgłoszenia              | `204` bez treści |
 
 **Przykładowy request:**
 
@@ -159,11 +160,11 @@ Codex ma dawać Ci **po jednym podzadaniu**, a nie wszystko za jednym razem. Che
 
 ### ETAP 0 — Fundament repozytorium i środowisko
 
-- [ ] **0.1** Załóż publiczne repozytorium `bugtracker-api-ts`, dodaj ten `PROJECT.md` i `AGENTS.md`. Ustal, jak będziesz robić małe commity.
-- [ ] **0.2** Zainicjuj Node + TypeScript. Skonfiguruj `strict: true`, `.gitignore` i skrypt sprawdzania typów. Wyjaśnij, po co są `tsconfig.json` i `package.json`.
-- [ ] **0.3** Stwórz minimalne działające wejście do aplikacji. Uruchom projekt lokalnie i sprawdź kompilację.
+- [x] **0.1** Załóż publiczne repozytorium `bugtracker-api-ts`, dodaj ten `PROJECT.md` i `AGENTS.md`. Ustal, jak będziesz robić małe commity.
+- [x] **0.2** Zainicjuj Node + TypeScript. Skonfiguruj `strict: true`, `.gitignore` i skrypt sprawdzania typów. Wyjaśnij, po co są `tsconfig.json` i `package.json`.
+- [x] **0.3** Stwórz minimalne działające wejście do aplikacji. Uruchom projekt lokalnie i sprawdź kompilację.
   - Weryfikacja debugowania TS: w VS Code zatrzymaj wykonanie na breakpoincie w pliku `.ts`, obejrzyj wartość lokalną i call stack oraz wykonaj krok. Wyjaśnij, jak debugger trafia do źródła TS (w tym rolę source maps, jeśli używasz kompilacji). Nie wystarczy sam plik konfiguracji debuggera.
-- [ ] **0.4** Dodaj podstawowe zasady formatowania i sprawdzania jakości kodu. Nie dodawaj jeszcze żadnej funkcji biznesowej.
+- [x] **0.4** Dodaj podstawowe zasady formatowania i sprawdzania jakości kodu. Nie dodawaj jeszcze żadnej funkcji biznesowej.
 
 **Checkpoint:** Umiesz bez AI wyjaśnić różnicę między `tsc`, uruchamianiem JS/TS i `npm scripts`.
 
@@ -279,15 +280,15 @@ Codex ma dawać Ci **po jednym podzadaniu**, a nie wszystko za jednym razem. Che
 
 Ta tabela mówi **co zweryfikować**, nie jak napisać test.
 
-| Scenariusz | Pozytywny | Negatywny / brzegowy |
-|---|---|---|
-| Create | poprawny issue, `201`, `id` i daty | puste title, same spacje, 2/101 znaków, błędny priority |
-| List | pusta lista, lista po dodaniu | filtr bez wyników, niedozwolony status |
-| Get by ID | istniejący issue | nieprawidłowy UUID, nieistniejący UUID |
-| Update | częściowa aktualizacja, zmiana daty | `{}`, niedozwolony status, brak issue |
-| Delete | `204`, potem `404` | brak issue, poprawny format odpowiedzi |
-| Persistence | odczyt po restarcie | uszkodzony JSON, błędy I/O |
-| Isolation | test uruchamia się samodzielnie | testy nie zależą od kolejności |
+| Scenariusz  | Pozytywny                           | Negatywny / brzegowy                                    |
+| ----------- | ----------------------------------- | ------------------------------------------------------- |
+| Create      | poprawny issue, `201`, `id` i daty  | puste title, same spacje, 2/101 znaków, błędny priority |
+| List        | pusta lista, lista po dodaniu       | filtr bez wyników, niedozwolony status                  |
+| Get by ID   | istniejący issue                    | nieprawidłowy UUID, nieistniejący UUID                  |
+| Update      | częściowa aktualizacja, zmiana daty | `{}`, niedozwolony status, brak issue                   |
+| Delete      | `204`, potem `404`                  | brak issue, poprawny format odpowiedzi                  |
+| Persistence | odczyt po restarcie                 | uszkodzony JSON, błędy I/O                              |
+| Isolation   | test uruchamia się samodzielnie     | testy nie zależą od kolejności                          |
 
 Nie traktuj samej liczby testów ani procentu coverage jako dowodu jakości. Ważniejsze są poprawne asercje, przypadki brzegowe i deterministyczność.
 

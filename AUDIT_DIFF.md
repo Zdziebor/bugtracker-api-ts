@@ -9,21 +9,21 @@ index 1103410..58cb2de 100644
 +++ b/AGENTS.md
 @@ -81,11 +81,14 @@ Po komunikacie „REVIEW”:
  - Nie twierdź, że plik, test lub CI działa, jeśli tego nie sprawdzono.
- 
+
  ## Granice projektu
 +- Obowiązkowe klasy, konstruktory, enkapsulacja i dependency injection ćwiczymy w repository i service zgodnie z `PROJECT.md`; nie narzucaj dziedziczenia ani kontenera DI. Nie dodawaj mechanizmu tylko po to, by pojawił się w kodzie.
 +- Deadline głównej ścieżki to 31.10.2026. Jeśli dostępny czas nie wystarcza, pokaż konflikt i oszacowanie z `ROADMAP.md`; nie usuwaj ważnych umiejętności ani nie zaliczaj ich bez dowodów.
  - Wymagania podstawowe są w `PROJECT.md` — nie dokładaj nowych frameworków i funkcji bez potrzeby.
  - Nie buduj frontendu, logowania, bazy SQL, Dockera ani mikroserwisów w ramach obowiązkowej części projektu.
  - Rozszerzenia `BONUS` można zaproponować dopiero po skończeniu głównej ścieżki; **nie blokują przejścia do Playwrighta**.
- 
+
  ## Odnotowywanie postępów
 +- Matryca w `AUDIT.md` mapuje wymagania na zadania i dowody, ale nie jest drugą checklistą. Odróżniaj obecność tematu w specyfikacji od jego praktycznego opanowania.
  - `PROJECT.md` jest **jedyną checklistą ukończenia** zadań; `PROGRESS.md` jest krótkim dziennikiem sesji i blockerów.
  - Nie oznaczaj zadania jako ukończonego bez pokazania przez użytkownika wyników lub przeprowadzenia uzgodnionych sprawdzeń.
  - Domyślnie nie edytuj nawet plików `.md`. Na polecenie `ZAPISZ POSTĘP` możesz zaktualizować **wyłącznie** checkbox w `PROJECT.md` i dziennik `PROGRESS.md`, jeśli użytkownik potwierdzi, że chce tej aktualizacji.
 @@ -103,3 +106,10 @@ Po komunikacie „REVIEW”:
- 
+
  ## Pierwsza odpowiedź Codexa
  Gdy użytkownik napisze `START`, krótko potwierdź cel i podaj wyłącznie **zadanie `0.1` z `PROJECT.md`, bez komend tworzących całą aplikację i bez gotowego kodu.
 +
@@ -38,15 +38,15 @@ index 2262f7c..2a5716f 100644
 --- a/PROGRESS.md
 +++ b/PROGRESS.md
 @@ -2,14 +2,15 @@
- 
- > Projekt #2: BugTracker API + Automated Tests  
- > Planowany start: **2026-10-12 (poniedziałek)**  
+
+ > Projekt #2: BugTracker API + Automated Tests
+ > Planowany start: **2026-10-12 (poniedziałek)**
 -> **Stan początkowy:** nie rozpoczęto
 +> Deadline: **2026-10-31**
 +> Stan: rozpoczęto przygotowanie repozytorium; brak dowodów ukończenia pozostałych etapów.
- 
+
  ## Aktualny etap
- 
+
  - Etap: `0 — Fundament repozytorium`
 -- Najbliższe zadanie: `0.1`
 -- Ostatnio ukończone zadanie: brak
@@ -54,13 +54,13 @@ index 2262f7c..2a5716f 100644
 +- Najbliższe zadanie: `0.2` (wydane w rozmowie; wykonanie nieweryfikowane)
 +- Ostatnio potwierdzone w rozmowie: `0.1`; checkbox w `PROJECT.md` nie został jeszcze zsynchronizowany. Audyt specyfikacji nie odhacza zadań.
 +- Aktualne ryzyko: deadline 31.10.2026 przy 2 h dziennie daje 40 h od planowanego startu, mniej niż szacowany zakres; zobacz `ROADMAP.md`.
- 
+
  ## Dziennik sesji
- 
+
 @@ -19,6 +20,14 @@ Dodawaj **jeden krótki wpis po sesji**. Nie musisz wpisywać czasu co do minuty
  |---|---|---|---|---|---|
  | 2026-10-12 | — | Start projektu | — | — | Zadanie 0.1 |
- 
+
 +Powyższy wpis pochodzi z szablonu i oznacza planowany start, nie dowód odbycia przyszłej sesji.
 +
 +### Audyt specyfikacji — 2026-10-11
@@ -70,28 +70,28 @@ index 2262f7c..2a5716f 100644
 +Dowody po faktycznym wykonaniu zadania zapisujemy w krótkim wpisie sesji: numer zadania, wynik/komenda lub link do PR/runu, przyczyna napotkanego błędu, zakres pomocy i następny krok. Dla 8.8 dodatkowo: potwierdzenie nowości wymagania, własny plan/tabela przypadków, wyniki i wyjaśnienie decyzji. Nie dodajemy drugiej checklisty umiejętności; mapowanie znajduje się w `AUDIT.md`.
 +
  **Samodzielność:** S0 = AI podało istotne kroki lub szkielet; S1 = mój pomysł + konkretne wskazówki; S2 = własny plan i implementacja, dokumentacja + review AI. Poziom to opis **sposobu wykonania zadania**, nie ocena użytkownika. Aktualizuj na żądanie, nie trzeba wpisywać codziennie.
- 
+
  ## Luki do powtórki
 diff --git a/PROJECT.md b/PROJECT.md
 index 61e65f3..3d5fa2d 100644
 --- a/PROJECT.md
 +++ b/PROJECT.md
 @@ -2,6 +2,7 @@
- 
- > **Projekt #2: TypeScript → testowanie API → Playwright**  
- > Status: do rozpoczęcia — **poniedziałek, 12.10.2026**  
+
+ > **Projekt #2: TypeScript → testowanie API → Playwright**
+ > Status: do rozpoczęcia — **poniedziałek, 12.10.2026**
 +> Deadline głównej ścieżki: **31.10.2026**; konflikt dostępnego czasu opisano w `ROADMAP.md`.
  > Język kodu/README: English | Wskazówki mentora: polski
- 
+
  ## 1. Po co budujesz ten projekt?
 @@ -150,6 +151,8 @@ bugtracker-api-ts/
- 
+
  **Zasada architektoniczna:** route obsługuje HTTP, service logikę, repository zapis/odczyt. Test integracyjny nie może wymagać ręcznego uruchamiania serwera w osobnym terminalu.
- 
+
 +**Obowiązkowe OOP i dependency injection:** repository w pamięci, repository JSON i service implementuj jako klasy. Konstruktor inicjalizuje stan i przyjmuje potrzebne zależności; service zależy od kontraktu repository, nie od jego konkretnej implementacji. Połączenie zależności wykonuj w miejscu składania aplikacji, a w testach podmieniaj je bez zmiany service. Wyjaśnij różnicę między klasą a instancją, rolę konstruktora, `this`, enkapsulację i kompozycję. Funkcje domenowe mogą pozostać czyste. Nie wymagamy dziedziczenia, kontenera DI, dekoratorów ani klas dla każdej funkcji.
 +
  ## 5. Backlog — ucz się etapami
- 
+
  Codex ma dawać Ci **po jednym podzadaniu**, a nie wszystko za jednym razem. Checkbox zaznaczaj dopiero po samodzielnym wykonaniu i weryfikacji.
 @@ -159,6 +162,7 @@ Codex ma dawać Ci **po jednym podzadaniu**, a nie wszystko za jednym razem. Che
  - [ ] **0.1** Załóż publiczne repozytorium `bugtracker-api-ts`, dodaj ten `PROJECT.md` i `AGENTS.md`. Ustal, jak będziesz robić małe commity.
@@ -99,11 +99,11 @@ index 61e65f3..3d5fa2d 100644
  - [ ] **0.3** Stwórz minimalne działające wejście do aplikacji. Uruchom projekt lokalnie i sprawdź kompilację.
 +  - Weryfikacja debugowania TS: w VS Code zatrzymaj wykonanie na breakpoincie w pliku `.ts`, obejrzyj wartość lokalną i call stack oraz wykonaj krok. Wyjaśnij, jak debugger trafia do źródła TS (w tym rolę source maps, jeśli używasz kompilacji). Nie wystarczy sam plik konfiguracji debuggera.
  - [ ] **0.4** Dodaj podstawowe zasady formatowania i sprawdzania jakości kodu. Nie dodawaj jeszcze żadnej funkcji biznesowej.
- 
+
  **Checkpoint:** Umiesz bez AI wyjaśnić różnicę między `tsc`, uruchamianiem JS/TS i `npm scripts`.
 @@ -175,8 +179,8 @@ Codex ma dawać Ci **po jednym podzadaniu**, a nie wszystko za jednym razem. Che
  ### ETAP 2 — Warstwa przechowywania i logika CRUD
- 
+
  - [ ] **2.1** Zaprojektuj prosty kontrakt repository dla operacji: `create`, `findAll`, `findById`, `update`, `delete`.
 -- [ ] **2.2** Zaimplementuj repozytorium trzymające zgłoszenia w pamięci. Nie ujawniaj przypadkowo mutowalnego wewnętrznego stanu.
 -- [ ] **2.3** Zaimplementuj operacje usługi: dodaj, pobierz jedno, pobierz wszystkie, aktualizuj, usuń.
@@ -111,18 +111,18 @@ index 61e65f3..3d5fa2d 100644
 +- [ ] **2.3** Zaimplementuj jako klasę operacje usługi: dodaj, pobierz jedno, pobierz wszystkie, aktualizuj, usuń. Wstrzyknij repository przez konstruktor i uzasadnij zależność od kontraktu. Wskaż miejsce składania zależności; nie twórz konkretnego repository wewnątrz service.
  - [ ] **2.4** Dodaj filtrowanie po `status` i `priority`. Zastanów się, co powinno się stać, gdy brak wyników.
  - [ ] **2.5** Wymyśl trzy sytuacje, w których warstwa logiki musi obsłużyć brak zgłoszenia lub błędne dane.
- 
+
 @@ -191,16 +195,20 @@ Codex ma dawać Ci **po jednym podzadaniu**, a nie wszystko za jednym razem. Che
  - [ ] **3.5** Dodaj spójne kody i komunikaty błędów (`400`, `404`, `500`). Nie zwracaj stack trace.
  - [ ] **3.6** Dodaj walidację i filtrowanie `GET /issues?status=...&priority=...`.
  - [ ] **3.7** Ręcznie przetestuj API (np. Postman, Insomnia albo `curl`) dla co najmniej jednego poprawnego i jednego błędnego scenariusza każdej operacji.
 +  - Na własnych requestach wskaż metodę, URL, path parameters, query parameters, headers i body; wyjaśnij przepływ request–response oraz różnicę między błędem HTTP a brakiem odpowiedzi wskutek błędu sieciowego. Pokaż request z `Content-Type: application/json`, odczytaj status i nagłówki odpowiedzi oraz porównaj jej JSON z kontraktem (dla 204 sprawdź brak body).
 +- [ ] **3.8** Napisz niewielki skrypt kliencki z natywnym `fetch()` do lokalnego API, bez nowej biblioteki i bez frontendu. Wyślij poprawny POST z nagłówkiem JSON i odczytaj utworzone zgłoszenie po ID; pokaż osobno odpowiedź HTTP 400/404 i błąd połączenia przy zatrzymanym lokalnym serwerze. Kryteria: interpretujesz status/`ok`, sprawdzasz istotne pola odpowiedzi, obsługujesz błąd HTTP oraz odrzucenie Promise, oczekujesz na zakończenie operacji i wyjaśniasz, dlaczego odpowiedź 404 sama w sobie nie oznacza odrzucenia Promise przez `fetch`. To pojedyncze ćwiczenie manualne, nie drugi zestaw testów ani wymaganie uruchamiania serwera dla Supertest.
- 
+
  **Checkpoint:** Umiesz wyjaśnić, kiedy HTTP zwraca `200`, `201`, `204`, `400`, `404`, `500`, po co jest middleware i dlaczego typy TS nie walidują body HTTP.
- 
+
  ### ETAP 4 — `async/await` i trwały zapis do JSON
- 
+
  - [ ] **4.1** Poznaj `Promise`, `async/await` oraz `try/catch` na samodzielnym minićwiczeniu z `fs/promises`.
 -- [ ] **4.2** Dodaj drugi typ repository zapisujący dane w lokalnym pliku JSON asynchronicznie, bez `readFileSync` i `writeFileSync`.
 +  - W jednym minićwiczeniu użyj tymczasowego katalogu: obsłuż sukces oraz odrzucenie Promise i zapewnij sprzątanie w `finally` w obu przypadkach. Porównaj sekwencyjny odczyt dwóch niezależnych plików z `Promise.all`; uzasadnij, które operacje zależne muszą pozostać sekwencyjne. Nie wykonuj współbieżnych zapisów do tego samego pliku. Wyjaśnij, że odrzucenie `Promise.all` nie anuluje innych rozpoczętych operacji; sprzątanie nie może z nimi konkurować. Wskaż na swoim przykładzie skutek pominięcia `await` i popraw go. Dowód: wynik obu odczytów, obsłużony błąd, posprzątany katalog i wyjaśnienie kolejności; bez testów opartych na czasie wykonania.
@@ -131,12 +131,12 @@ index 61e65f3..3d5fa2d 100644
  - [ ] **4.4** Obsłuż uszkodzony JSON i błąd odczytu/zapisu w sposób jawny; nie zamieniaj uszkodzonego pliku po cichu na pustą listę.
  - [ ] **4.5** Dodaj możliwość wyboru repozytorium i ścieżki pliku za pomocą konfiguracji. Testy muszą używać izolowanego, tymczasowego katalogu albo repozytorium w pamięci.
 +  - Dowód DI: ten sam service działa z obiema implementacjami bez zmiany swojego kodu; wybór i składanie zależności odbywa się poza service. Kontrakt i wywołujący muszą poprawnie obsługiwać asynchroniczne I/O.
- 
+
  **Checkpoint:** Rozumiesz, co zwraca funkcja `async`, gdzie powinno być `await`, jak przechwycić odrzucony Promise i dlaczego integracja z systemem plików utrudnia testy, jeśli nie zadbasz o izolację.
- 
+
 @@ -209,11 +217,16 @@ Codex ma dawać Ci **po jednym podzadaniu**, a nie wszystko za jednym razem. Che
  ### ETAP 5 — Testy jednostkowe (Vitest)
- 
+
  - [ ] **5.1** Skonfiguruj Vitest i pierwszy samodzielny test czystej funkcji.
 +  - Wskaż części Arrange–Act–Assert we własnym teście; nazwa opisuje zachowanie, a asercja wykrywa jego naruszenie. Nie wymaga się komentarzy AAA w każdym teście.
  - [ ] **5.2** Przetestuj tworzenie issue: wartości domyślne, poprawne dane, ograniczenia pól.
@@ -148,9 +148,9 @@ index 61e65f3..3d5fa2d 100644
  - [ ] **5.5** Wprowadź czytelne fabryki danych testowych, zamiast wklejać ten sam obiekt do każdego testu.
  - [ ] **5.6** Doprowadź testy do niezależności — kolejność uruchomienia nie może zmieniać wyniku.
 +  - Kontroluj czas i ID tam, gdzie wpływają na asercje; nie używaj oczekiwania przez sleep. Każdy test otrzymuje własny stan, spy/mocks są odpowiednio czyszczone lub przywracane. Sprawdź wybrany test osobno i cały zestaw, a dla JSON także sprzątanie katalogów tymczasowych. Wyjaśnij różnicę między czyszczeniem historii wywołań a przywróceniem oryginalnej metody.
- 
+
  **Checkpoint:** Potrafisz wyjaśnić `describe`, `it/test`, `expect`, `beforeEach`, fake/test double, happy path, negative path, boundary case.
- 
+
 @@ -222,12 +235,14 @@ Codex ma dawać Ci **po jednym podzadaniu**, a nie wszystko za jednym razem. Che
  - [ ] **6.1** Napisz pierwszy test `GET /health`, bez uruchamiania serwera ręcznie.
  - [ ] **6.2** Napisz test `POST /issues`: poprawne body → `201`, wymagane pola i wartości domyślne.
@@ -163,9 +163,9 @@ index 61e65f3..3d5fa2d 100644
  - [ ] **6.8** Napisz przynajmniej jeden pełny scenariusz CRUD: create → read → update → delete → read (`404`).
  - [ ] **6.9** Sprawdź izolację danych testowych: każdy test zaczyna z ustalonym stanem, bez zależności od innych testów i od zewnętrznego API.
 +  - Kryteria odpowiedzi dla 6.1–6.8: sprawdzaj status i istotne wartości/typy oraz strukturę `data` lub `error`, a nie sam status. Dla odpowiedzi JSON sprawdź `Content-Type`, dla DELETE brak body. Pokaż 500 przez kontrolowane odrzucenie zależności i sprawdź brak stack trace. Błąd sieciowy klienta jest ćwiczony w 3.8, nie przez niestabilne połączenie w Supertest.
- 
+
  **Checkpoint:** Umiesz powiedzieć, co testuje jednostka, co testuje endpoint, dlaczego testy wymagają izolacji i czym różni się test negatywny od pozytywnego.
- 
+
 @@ -236,7 +251,7 @@ Codex ma dawać Ci **po jednym podzadaniu**, a nie wszystko za jednym razem. Che
  - [ ] **7.1** Dodaj skrypty: `dev`, `typecheck`, `lint`, `format:check`, `test`, `build` (jeśli stosujesz kompilację).
  - [ ] **7.2** Przygotuj workflow GitHub Actions uruchamiany na `push` i `pull_request`. Użyj Node 24 i `npm ci`.
@@ -173,7 +173,7 @@ index 61e65f3..3d5fa2d 100644
 -- [ ] **7.4** Celowo wprowadź lokalnie prosty błąd i zobacz, który test/check go wykrywa. Następnie cofnij błąd.
 +- [ ] **7.4** Na osobnej gałęzi celowo wprowadź mały błąd wykrywany przez istniejący test i odtwórz go lokalnie. Sam odczytaj komunikat i stack trace, wskaż istotną ramkę własnego kodu, postaw hipotezę i użyj breakpointu w TS do sprawdzenia wartości podczas testu. Zapisz w opisie PR objaw, przyczynę i dowód naprawy. Pokaż nieudany run GitHub Actions na tej gałęzi: wskaż job, krok, komendę i fragment logu wyjaśniający błąd. Napraw błąd własnoręcznie, uzyskaj zielony run i dopiero wtedy wykonaj merge PR. Dowód obejmuje branch, małe commity, link do PR oraz czerwonego i zielonego runu; nie psuj celowo gałęzi domyślnej.
  - [ ] **7.5** Sprawdź, czy repozytorium nie zawiera `node_modules`, lokalnego pliku z danymi, sekretów ani przypadkowych plików środowiskowych.
- 
+
  **Checkpoint:** Potrafisz wyjaśnić, co dzieje się w CI po `push`, jak odczytać log błędu i dlaczego „testy przechodzą u mnie” nie wystarcza.
 @@ -250,6 +265,13 @@ Codex ma dawać Ci **po jednym podzadaniu**, a nie wszystko za jednym razem. Che
  - [ ] **8.5** Pokaż widoczny status CI, uporządkuj historię commitów i upewnij się, że świeży klon repozytorium można uruchomić wyłącznie według README.
@@ -186,9 +186,9 @@ index 61e65f3..3d5fa2d 100644
 +**Warunki przeprowadzenia 8.8:** mentor przed rozpoczęciem porównuje wymaganie z historią zadań/PR i ćwiczeń; samo przeczytanie specyfikacji nie jest wykonaniem zadania. Nie ćwiczymy identycznego filtra wcześniej. Jeżeli użytkownik już go implementował, przed próbą zastępujemy go jednym równie małym, niećwiczonym wymaganiem i zapisujemy jego kontrakt; nie zaliczamy znanej implementacji jako transferu.
 +
 +**Kryteria 8.8:** użytkownik sam interpretuje wymagania, zapisuje plan i tabelę przypadków przed implementacją, wybiera moduły, implementuje zmianę oraz adekwatne unit/API tests, sam uruchamia sprawdzenia i diagnozuje błędy. Przedstawia diff, wyniki, wyjaśnienie decyzji, regresji i poziom pomocy. Jeśli nie napotka błędu, przeprowadza krótką kontrolowaną próbę z błędem w nowej zmianie i diagnozuje go, a następnie przywraca poprawne zachowanie. Oficjalna dokumentacja jest dozwolona; AI domyślnie dopiero robi końcowe review, bez oceny planu, listy przypadków, sygnatur ani kroków implementacji przed próbą. Pomoc na wyraźną prośbę jest dozwolona, ale odnotowana; po prowadzeniu krok po kroku dowód samodzielności wymaga kolejnej równie małej, nowej próby. Wszystkie wymagania kontraktu muszą być pokryte uzasadnionymi przypadkami, dotychczasowe testy i CI przechodzą, użytkownik sam wprowadza poprawki z review i potrafi wyjaśnić kod bez AI.
- 
+
  **Checkpoint:** Z pamięci umiesz wyjaśnić architekturę i testy oraz samodzielnie naprawić celowo wprowadzony błąd.
- 
+
 @@ -291,6 +313,7 @@ Możesz przejść **w pełni do Playwrighta**, gdy spełniasz WSZYSTKIE poniższ
  - [ ] Endpointy CRUD działają zgodnie z kontraktem, a błędy mają właściwe statusy.
  - [ ] Samodzielnie wykorzystujesz `async/await`, `try/catch` i moduły TS.
@@ -202,14 +202,14 @@ index dfe196a..bc9fd8f 100644
 --- a/ROADMAP.md
 +++ b/ROADMAP.md
 @@ -6,23 +6,25 @@ To projekt #2, który rozpoczniesz **w poniedziałek 12 października 2026 r.**,
- 
+
  **Cel nie jest taki, by zostać backend developerem.** Masz nauczyć się samodzielnie pisać TypeScript i testy, rozumieć HTTP oraz pracować z błędami, żeby później przejść bez osobnego kursu na **Playwright + TypeScript**.
- 
+
 -Pełny zakres oraz wszystkie podzadania (`0.1`–`8.7`) są zapisane w `PROJECT.md`. Ten dokument to wyłącznie mapa etapów. **Nie odhaczaj zadań tutaj — jedno źródło prawdy to `PROJECT.md`.**
 +Pełny zakres oraz wszystkie podzadania (`0.1`–`8.8`) są zapisane w `PROJECT.md`. Ten dokument to wyłącznie mapa etapów. **Nie odhaczaj zadań tutaj — jedno źródło prawdy to `PROJECT.md`.** Matryca umiejętności i dowodów znajduje się w `AUDIT.md`.
- 
+
  ## Etapy i orientacyjny nakład pracy
- 
+
  | Etap | Temat | Efekt etapu | Szacunkowo |
  |---|---|---|---:|
 -| 0 | Repozytorium, Node i TS | Projekt uruchamia się i przechodzi typecheck | 2–4 h |
@@ -229,17 +229,17 @@ index dfe196a..bc9fd8f 100644
 +| 6 | Vitest + Supertest — API | Walidacja odpowiedzi, test.each, CRUD i izolacja | 9–13 h |
 +| 7 | GitHub Actions | Debugging TS, diagnoza czerwonego CI, branch/PR/merge | 4–7 h |
 +| 8 | README i rozmowa | Portfolio i praktyczna próba samodzielności | 5–8 h |
- 
+
 -**Bazowy szacunek: około 43–70 godzin.** Z dodatkowymi samodzielnymi próbami, powtórkami i ćwiczeniami transferowymi realnie może to być **50–85 godzin**, czyli około 25–43 dni przy 2 godzinach dziennie. Nie traktuj tego jako deadline. Nie rozszerzaj zakresu backendu tylko dlatego, że idzie wolniej.
 +**Deadline pozostaje 31.10.2026.** Od 12 do 31 października włącznie są 20 dni, czyli 40 h przy codziennych 2 h nauki (mniej przy dniach wolnych). Dotychczasowe 43–70 h już przekraczało ten budżet. Po audycie szacunek planistyczny sumy etapów to **52–82 h**, a z poprawkami, powtórkami i transferem **60–95 h**. To oszacowanie, nie zmierzony czas; nakład ponownie oceniamy po etapach 0–2.
 +
 +**Konflikt:** przy 2 h dziennie pełna ścieżka do deadline'u nie jest realistycznym założeniem. Potrzebne byłoby średnio 2,6–4,1 h dziennie na bazowy zakres lub około 3–4,75 h z buforem. Nie zakładamy automatycznie, że użytkownik ma ten czas. Zachowujemy termin i wymagania, zgłaszamy ryzyko zamiast skreślać testy/OOP/debugging lub deklarować gotowość bez dowodów. Łączymy ćwiczenia z istniejącymi zadaniami, unikamy duplikatów, odkładamy wszystkie BONUS-y. Nie rozszerzaj zakresu backendu tylko dlatego, że idzie wolniej.
- 
+
  ## Jak będzie malało wsparcie AI?
- 
+
 @@ -36,10 +38,13 @@ Nie opieraj przejścia do Playwrighta na zero-jedynkowym „nigdy nie korzystał
  ## Kamienie milowe
- 
+
  - **Po etapie 2:** potrafisz zbudować logikę CRUD bez frameworka HTTP.
 +  Potrafisz też wyjaśnić klasę, instancję, konstruktor, enkapsulację i wstrzyknięcie zależności przez kontrakt.
  - **Po etapie 3:** umiesz wysłać request, odczytać response i wyjaśnić kody HTTP.
@@ -248,9 +248,9 @@ index dfe196a..bc9fd8f 100644
  - **Po etapie 6:** testujesz API automatycznie i diagnozujesz porażki testów.
  - **Po etapie 8:** masz repozytorium gotowe do pokazania rekruterowi i możesz rozpocząć projekt Playwright.
 +  Dowodem transferu jest 8.8 wykonane samodzielnie oraz praktyczne kryteria z `AUDIT.md`, a nie sam quiz.
- 
+
  ## Zasada priorytetów
- 
+
 diff --git a/AUDIT.md b/AUDIT.md
 new file mode 100644
 index 0000000..a4de6f3

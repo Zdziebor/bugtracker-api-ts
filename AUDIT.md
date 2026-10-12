@@ -21,39 +21,39 @@ Nie dodano Playwrighta, Allure, MCP, Reacta, Dockera, SQL, logowania, nowego du�
 
 To mapowanie kryteriów z PROJECT.md, nie druga checklista. Wszystkie poniższe umiejętności wymagają dowodu po wykonaniu, nie samej obecności w specyfikacji.
 
-| Umiejętność | Zadanie | Sposób weryfikacji |
-|---|---|---|
-| Klasy, instancje, konstruktor, this, enkapsulacja | 2.2, 2.3, 4.2 | Własne klasy repository/service, dwie niezależne instancje, wyjaśnienie stanu i konstruktora |
-| OOP: kompozycja i kontrakt | 2.1–2.3 | Service korzysta z kontraktu; użytkownik uzasadnia separację i kompozycję bez wymuszonego dziedziczenia |
-| Dependency injection | 2.3, 4.5, 5.4 | Ten sam service działa z memory/JSON/test double bez zmiany kodu; zależności przekazane z zewnątrz |
-| Equivalence Partitioning | 5.2, 6.3 | Samodzielna tabela klas danych, reprezentantów i oczekiwanych wyników przed testami |
-| Boundary Value Analysis | 5.2, 6.3 | Przypadki 2/3/100/101 po trim oraz 1000/1001 dla opisu z uzasadnieniem poziomu testu |
-| Happy path, negative path, edge cases | 5.2, 6.3–6.8 | Własne przykłady, przypisanie kategorii i asercje wykrywające naruszenie kontraktu |
-| Arrange–Act–Assert | 5.1 | Wskazanie trzech części własnego testu i wyjaśnienie odpowiedzialności asercji |
-| Samodzielne projektowanie testów | 5.2, 6.3, 8.8 | Tabela przed kodem; dobór danych i wyników przez użytkownika; w 8.8 bez wcześniejszej oceny AI |
-| Testy parametryzowane test.each | 6.3 | Jedna jednorodna grupa walidacji z czytelnymi nazwami i niezależnymi przypadkami |
-| Mock, stub, spy, fake — różnice | 5.4 | Wskazanie ról we własnych doubles i uzasadnienie ich wyboru; narzędzie nie determinuje roli |
-| vi.fn() | 5.4 | Kontrolowany wynik zależności i rejestracja interakcji w teście service |
-| vi.spyOn() | 5.4, 5.6 | Obserwacja rzeczywistej metody oraz przywrócenie jej po teście |
-| Kontrola zależności, wywołania i argumenty | 1.3, 5.4 | Kontrolowane ID/czas, argumenty/liczba wywołań istotnej operacji, sukces i odrzucenie repository |
-| Deterministyczność i izolacja | 5.6, 6.9 | Własny stan testu, kontrolowane ID/czas, cleanup doubles/katalogów, test osobno i w zestawie |
-| Promise i async/await | 4.1–4.5 | Wyniki ćwiczenia I/O i repository JSON; wyjaśnienie wyniku funkcji async i zależności operacji |
-| Odrzucone Promise | 4.1, 4.4, 5.4 | Obsłużony błąd I/O oraz test reject kontrolowanej zależności, bez cichej pustej bazy |
-| try/catch/finally | 4.1 | Sukces i błąd z dowodem sprzątania w obu ścieżkach; uzasadnienie finally |
-| Promise.all i sekwencja/współbieżność | 4.1 | Dwa niezależne odczyty obiema metodami, wyjaśnienie zależnych operacji i braku anulowania; bez pomiarów czasu jako asercji |
-| Testowanie funkcji async i brak await | 5.4 | Test resolve/reject czeka na asercję; diagnoza i poprawa kontrolowanego pominięcia await |
-| Podstawy HTTP, metody i statusy | 3.1–3.7 | Odczyt własnych request/response, wyjaśnienie 200/201/204/400/404/500 i przepływu HTTP |
-| Body, query, path parameters i headers | 3.7 | Wskazanie elementów w requestach POST, GET po ID i filtrowanej liście |
-| Content-Type i JSON | 3.7, 3.8, 6.9 | Wysłany nagłówek JSON, odczyt/sprawdzenie Content-Type odpowiedzi, brak parsowania pustego 204 |
-| Walidacja odpowiedzi API | 6.2–6.9 | Status, struktura i istotne pola data/error, wartości domyślne, UUID/daty według kontraktu, brak body przy 204 |
-| Błędy HTTP i sieciowe | 3.8, 6.9 | Różnica odpowiedzi 400/404 i odrzucenia fetch przy zatrzymanym serwerze; kontrolowany 500 bez stack trace |
-| Natywny fetch jako klient | 3.8 | Lokalny POST i odczyt po ID, interpretacja ok/status/JSON, wyniki sukcesu i obu rodzajów błędów |
-| Breakpointy VS Code i debugging TS | 0.3, 7.4 | Zatrzymanie w .ts, lokalna wartość/call stack/krok, potem sprawdzenie hipotezy podczas testu |
-| Stack trace i komunikaty błędów | 7.4 | Własna ramka kodu, objaw → hipoteza → przyczyna → dowód naprawy w opisie PR |
-| Samodzielna diagnoza testu | 7.4, 8.8 | Lokalna reprodukcja, sprawdzenie przyczyny, własna poprawka i ponowne przejście testu |
-| Git branch, commit, PR, merge | 0.1, 7.4 | Osobna gałąź, spójne commity, PR z diagnozą, merge po zielonym CI |
-| Nieudany pipeline GitHub Actions | 7.4 | Link do czerwonego i zielonego runu, identyfikacja job/krok/komenda/log oraz związku z poprawką |
-| Transfer i wyjaśnienie decyzji | 8.8 | Sprawdzenie nowości wymagania, własny plan/implementacja/testy/debugging, diff i wyniki, końcowe review i wyjaśnienie bez AI |
+| Umiejętność                                       | Zadanie       | Sposób weryfikacji                                                                                                           |
+| ------------------------------------------------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| Klasy, instancje, konstruktor, this, enkapsulacja | 2.2, 2.3, 4.2 | Własne klasy repository/service, dwie niezależne instancje, wyjaśnienie stanu i konstruktora                                 |
+| OOP: kompozycja i kontrakt                        | 2.1–2.3       | Service korzysta z kontraktu; użytkownik uzasadnia separację i kompozycję bez wymuszonego dziedziczenia                      |
+| Dependency injection                              | 2.3, 4.5, 5.4 | Ten sam service działa z memory/JSON/test double bez zmiany kodu; zależności przekazane z zewnątrz                           |
+| Equivalence Partitioning                          | 5.2, 6.3      | Samodzielna tabela klas danych, reprezentantów i oczekiwanych wyników przed testami                                          |
+| Boundary Value Analysis                           | 5.2, 6.3      | Przypadki 2/3/100/101 po trim oraz 1000/1001 dla opisu z uzasadnieniem poziomu testu                                         |
+| Happy path, negative path, edge cases             | 5.2, 6.3–6.8  | Własne przykłady, przypisanie kategorii i asercje wykrywające naruszenie kontraktu                                           |
+| Arrange–Act–Assert                                | 5.1           | Wskazanie trzech części własnego testu i wyjaśnienie odpowiedzialności asercji                                               |
+| Samodzielne projektowanie testów                  | 5.2, 6.3, 8.8 | Tabela przed kodem; dobór danych i wyników przez użytkownika; w 8.8 bez wcześniejszej oceny AI                               |
+| Testy parametryzowane test.each                   | 6.3           | Jedna jednorodna grupa walidacji z czytelnymi nazwami i niezależnymi przypadkami                                             |
+| Mock, stub, spy, fake — różnice                   | 5.4           | Wskazanie ról we własnych doubles i uzasadnienie ich wyboru; narzędzie nie determinuje roli                                  |
+| vi.fn()                                           | 5.4           | Kontrolowany wynik zależności i rejestracja interakcji w teście service                                                      |
+| vi.spyOn()                                        | 5.4, 5.6      | Obserwacja rzeczywistej metody oraz przywrócenie jej po teście                                                               |
+| Kontrola zależności, wywołania i argumenty        | 1.3, 5.4      | Kontrolowane ID/czas, argumenty/liczba wywołań istotnej operacji, sukces i odrzucenie repository                             |
+| Deterministyczność i izolacja                     | 5.6, 6.9      | Własny stan testu, kontrolowane ID/czas, cleanup doubles/katalogów, test osobno i w zestawie                                 |
+| Promise i async/await                             | 4.1–4.5       | Wyniki ćwiczenia I/O i repository JSON; wyjaśnienie wyniku funkcji async i zależności operacji                               |
+| Odrzucone Promise                                 | 4.1, 4.4, 5.4 | Obsłużony błąd I/O oraz test reject kontrolowanej zależności, bez cichej pustej bazy                                         |
+| try/catch/finally                                 | 4.1           | Sukces i błąd z dowodem sprzątania w obu ścieżkach; uzasadnienie finally                                                     |
+| Promise.all i sekwencja/współbieżność             | 4.1           | Dwa niezależne odczyty obiema metodami, wyjaśnienie zależnych operacji i braku anulowania; bez pomiarów czasu jako asercji   |
+| Testowanie funkcji async i brak await             | 5.4           | Test resolve/reject czeka na asercję; diagnoza i poprawa kontrolowanego pominięcia await                                     |
+| Podstawy HTTP, metody i statusy                   | 3.1–3.7       | Odczyt własnych request/response, wyjaśnienie 200/201/204/400/404/500 i przepływu HTTP                                       |
+| Body, query, path parameters i headers            | 3.7           | Wskazanie elementów w requestach POST, GET po ID i filtrowanej liście                                                        |
+| Content-Type i JSON                               | 3.7, 3.8, 6.9 | Wysłany nagłówek JSON, odczyt/sprawdzenie Content-Type odpowiedzi, brak parsowania pustego 204                               |
+| Walidacja odpowiedzi API                          | 6.2–6.9       | Status, struktura i istotne pola data/error, wartości domyślne, UUID/daty według kontraktu, brak body przy 204               |
+| Błędy HTTP i sieciowe                             | 3.8, 6.9      | Różnica odpowiedzi 400/404 i odrzucenia fetch przy zatrzymanym serwerze; kontrolowany 500 bez stack trace                    |
+| Natywny fetch jako klient                         | 3.8           | Lokalny POST i odczyt po ID, interpretacja ok/status/JSON, wyniki sukcesu i obu rodzajów błędów                              |
+| Breakpointy VS Code i debugging TS                | 0.3, 7.4      | Zatrzymanie w .ts, lokalna wartość/call stack/krok, potem sprawdzenie hipotezy podczas testu                                 |
+| Stack trace i komunikaty błędów                   | 7.4           | Własna ramka kodu, objaw → hipoteza → przyczyna → dowód naprawy w opisie PR                                                  |
+| Samodzielna diagnoza testu                        | 7.4, 8.8      | Lokalna reprodukcja, sprawdzenie przyczyny, własna poprawka i ponowne przejście testu                                        |
+| Git branch, commit, PR, merge                     | 0.1, 7.4      | Osobna gałąź, spójne commity, PR z diagnozą, merge po zielonym CI                                                            |
+| Nieudany pipeline GitHub Actions                  | 7.4           | Link do czerwonego i zielonego runu, identyfikacja job/krok/komenda/log oraz związku z poprawką                              |
+| Transfer i wyjaśnienie decyzji                    | 8.8           | Sprawdzenie nowości wymagania, własny plan/implementacja/testy/debugging, diff i wyniki, końcowe review i wyjaśnienie bez AI |
 
 ## Termin i ograniczenia oceny
 

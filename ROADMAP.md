@@ -10,17 +10,17 @@ Pełny zakres oraz wszystkie podzadania (`0.1`–`8.8`) są zapisane w `PROJECT.
 
 ## Etapy i orientacyjny nakład pracy
 
-| Etap | Temat | Efekt etapu | Szacunkowo |
-|---|---|---|---:|
-| 0 | Repozytorium, Node i TS | Projekt uruchamia się, przechodzi typecheck i zatrzymuje na breakpoincie TS | 2–4 h |
-| 1 | Typy i model Issue | Tworzenie/aktualizacja obiektów, zasady domeny | 4–7 h |
-| 2 | Repository i service | CRUD, klasy, konstruktory i DI przez kontrakt | 6–9 h |
-| 3 | Express, HTTP, Zod | Endpointy REST, walidacja i mały klient fetch | 8–12 h |
-| 4 | `async/await`, JSON | I/O, sprzątanie, odrzucenia i współbieżne niezależne odczyty | 6–10 h |
-| 5 | Vitest — unit | AAA, EP/BVA, test doubles i testy async | 8–12 h |
-| 6 | Vitest + Supertest — API | Walidacja odpowiedzi, test.each, CRUD i izolacja | 9–13 h |
-| 7 | GitHub Actions | Debugging TS, diagnoza czerwonego CI, branch/PR/merge | 4–7 h |
-| 8 | README i rozmowa | Portfolio i praktyczna próba samodzielności | 5–8 h |
+| Etap | Temat                    | Efekt etapu                                                                 | Szacunkowo |
+| ---- | ------------------------ | --------------------------------------------------------------------------- | ---------: |
+| 0    | Repozytorium, Node i TS  | Projekt uruchamia się, przechodzi typecheck i zatrzymuje na breakpoincie TS |      2–4 h |
+| 1    | Typy i model Issue       | Tworzenie/aktualizacja obiektów, zasady domeny                              |      4–7 h |
+| 2    | Repository i service     | CRUD, klasy, konstruktory i DI przez kontrakt                               |      6–9 h |
+| 3    | Express, HTTP, Zod       | Endpointy REST, walidacja i mały klient fetch                               |     8–12 h |
+| 4    | `async/await`, JSON      | I/O, sprzątanie, odrzucenia i współbieżne niezależne odczyty                |     6–10 h |
+| 5    | Vitest — unit            | AAA, EP/BVA, test doubles i testy async                                     |     8–12 h |
+| 6    | Vitest + Supertest — API | Walidacja odpowiedzi, test.each, CRUD i izolacja                            |     9–13 h |
+| 7    | GitHub Actions           | Debugging TS, diagnoza czerwonego CI, branch/PR/merge                       |      4–7 h |
+| 8    | README i rozmowa         | Portfolio i praktyczna próba samodzielności                                 |      5–8 h |
 
 **Deadline pozostaje 31.10.2026.** Od 12 do 31 października włącznie są 20 dni, czyli 40 h przy codziennych 2 h nauki (mniej przy dniach wolnych). Dotychczasowe 43–70 h już przekraczało ten budżet. Po audycie szacunek planistyczny sumy etapów to **52–82 h**, a z poprawkami, powtórkami i transferem **60–95 h**. To oszacowanie, nie zmierzony czas; nakład ponownie oceniamy po etapach 0–2.
 
@@ -28,7 +28,7 @@ Pełny zakres oraz wszystkie podzadania (`0.1`–`8.8`) są zapisane w `PROJECT.
 
 ## Jak będzie malało wsparcie AI?
 
-- **Etapy 0–2:** Priorytet: nauczyć się układać *własny plan* zanim Codex poda sugestie. Wskazówki są normalne i dozwolone. Za pierwszym razem z nowym zagadnieniem możesz potrzebować przykładu na innych danych.
+- **Etapy 0–2:** Priorytet: nauczyć się układać _własny plan_ zanim Codex poda sugestie. Wskazówki są normalne i dozwolone. Za pierwszym razem z nowym zagadnieniem możesz potrzebować przykładu na innych danych.
 - **Etapy 3–4:** Nowe biblioteki i asynchroniczność — dozwolone objaśnienia mechanizmów oraz dokumentacja. Przy podobnych endpointach i operacjach stopniowo przejmuj projektowanie sygnatur i algorytmu.
 - **Etapy 5–6:** Przy testach próbuj najpierw sam wymyślać przypadki, dane i asercje. Codex recenzuje; po pomocy 3–4 dostajesz krótkie ćwiczenie transferowe.
 - **Etapy 7–8:** Nauka CI i dokumentacji — składni nowych narzędzi nie musisz pamiętać z głowy. Końcowy sprawdzian: samodzielnie zaplanuj i napisz jedną małą zmianę logiki API oraz test, a następnie wyjaśnij swoją implementację.

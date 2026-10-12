@@ -18,13 +18,13 @@ Będziesz stopniowo coraz samodzielniej tworzyć w **TypeScript** małe **REST A
 
 ## Co znajduje się w tej paczce?
 
-| Plik | Zastosowanie |
-|---|---|
-| `AGENTS.md` | Zasady pracy Codexa: mentor, brak automatycznych rozwiązań, 4 poziomy podpowiedzi |
-| `PROJECT.md` | Wymagania, kontrakt API, szczegółowa checklista i kryteria ukończenia |
-| `ROADMAP.md` | Etapy, szacowany nakład pracy i kamienie milowe |
-| `PROGRESS.md` | Dziennik sesji i lista tematów do powtórki |
-| `START_HERE.md` | Instrukcja rozpoczęcia |
+| Plik            | Zastosowanie                                                                      |
+| --------------- | --------------------------------------------------------------------------------- |
+| `AGENTS.md`     | Zasady pracy Codexa: mentor, brak automatycznych rozwiązań, 4 poziomy podpowiedzi |
+| `PROJECT.md`    | Wymagania, kontrakt API, szczegółowa checklista i kryteria ukończenia             |
+| `ROADMAP.md`    | Etapy, szacowany nakład pracy i kamienie milowe                                   |
+| `PROGRESS.md`   | Dziennik sesji i lista tematów do powtórki                                        |
+| `START_HERE.md` | Instrukcja rozpoczęcia                                                            |
 
 ## W poniedziałek — pierwszy start (bez generowania kodu przez AI)
 
@@ -38,22 +38,22 @@ Będziesz stopniowo coraz samodzielniej tworzyć w **TypeScript** małe **REST A
 
 ## Komendy, które rozumie mentor
 
-| Komenda | Efekt |
-|---|---|
-| `START` | Pierwsze najmniejsze zadanie |
-| `DALEJ` | Następne zadanie, jeśli aktualne ukończone |
-| `WSKAZÓWKA 1` | Pytanie naprowadzające |
-| `WSKAZÓWKA 2` | Nazwa pojęcia/metody i dokumentacja |
-| `WSKAZÓWKA 3` | Algorytm opisany krok po kroku, bez gotowego kodu |
-| `WSKAZÓWKA 4` | Mały przykład na **innych danych** — tylko na Twoją prośbę |
-| `MÓJ PLAN` | Codex recenzuje Twój pomysł przed pisaniem kodu, bez gotowej implementacji |
-| `TRANSFER` | Małe podobne zadanie sprawdzające samodzielność |
-| `REVIEW` | Ocena Twojego kodu i testów, bez edytowania plików |
-| `DEBUG` | Pomoc w zrozumieniu błędu, nie automatyczne jego naprawienie |
-| `QUIZ` | Trzy pytania sprawdzające z ostatniego etapu |
-| `ZAPISZ POSTĘP` | Po Twojej zgodzie aktualizacja `PROJECT.md` i `PROGRESS.md` |
-| `POSTĘP` | Pokaż, co już zrobione i co dalej |
-| `INTERVIEW` | Symulacja rozmowy rekrutacyjnej o projekcie |
+| Komenda         | Efekt                                                                      |
+| --------------- | -------------------------------------------------------------------------- |
+| `START`         | Pierwsze najmniejsze zadanie                                               |
+| `DALEJ`         | Następne zadanie, jeśli aktualne ukończone                                 |
+| `WSKAZÓWKA 1`   | Pytanie naprowadzające                                                     |
+| `WSKAZÓWKA 2`   | Nazwa pojęcia/metody i dokumentacja                                        |
+| `WSKAZÓWKA 3`   | Algorytm opisany krok po kroku, bez gotowego kodu                          |
+| `WSKAZÓWKA 4`   | Mały przykład na **innych danych** — tylko na Twoją prośbę                 |
+| `MÓJ PLAN`      | Codex recenzuje Twój pomysł przed pisaniem kodu, bez gotowej implementacji |
+| `TRANSFER`      | Małe podobne zadanie sprawdzające samodzielność                            |
+| `REVIEW`        | Ocena Twojego kodu i testów, bez edytowania plików                         |
+| `DEBUG`         | Pomoc w zrozumieniu błędu, nie automatyczne jego naprawienie               |
+| `QUIZ`          | Trzy pytania sprawdzające z ostatniego etapu                               |
+| `ZAPISZ POSTĘP` | Po Twojej zgodzie aktualizacja `PROJECT.md` i `PROGRESS.md`                |
+| `POSTĘP`        | Pokaż, co już zrobione i co dalej                                          |
+| `INTERVIEW`     | Symulacja rozmowy rekrutacyjnej o projekcie                                |
 
 ## Jak będzie działała pomoc?
 
